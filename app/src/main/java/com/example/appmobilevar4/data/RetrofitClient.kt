@@ -1,4 +1,4 @@
-package com.example.AppMobileVar4
+package com.example.appmobilevar4.data
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

@@ -1,4 +1,4 @@
-package com.example.AppMobileVar4
+package com.example.appmobilevar4.data
 
 import com.example.AppMobileVar4.Model.PostResponse
 import com.example.AppMobileVar4.Model.Todo

@@ -15,8 +15,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.AppMobileVar4.ui.theme.AppMobileVar4Theme
-import com.example.AppMobileVar4.viewModel.PostViewModel
-import com.example.AppMobileVar4.viewModel.TodoViewModel
+import com.example.appmobilevar4.ui.viewModel.PostViewModel
+import com.example.appmobilevar4.ui.viewModel.TodoViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,10 +1,10 @@
-package com.example.AppMobileVar4.viewModel
+package com.example.appmobilevar4.ui.viewModel
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.AppMobileVar4.Model.Todo
-import com.example.AppMobileVar4.RetrofitClient
+import com.example.appmobilevar4.data.RetrofitClient
 import kotlinx.coroutines.launch
 
 class TodoViewModel: ViewModel() {
