@@ -15,8 +15,7 @@ class PostViewModel: ViewModel() {
                 for (post in response.posts) {
                     Log.d(
                         "PostLog",
-                        "ID: ${post.id} | " +
-                                "Заголовок: ${post.title} | " +
+                        "Заголовок: ${post.title} | " +
                                 "Текст: ${post.body} | " +
                                 "Просмотры: ${post.views} | " +
                                 "Реакции: ${post.reactions.likes} / ${post.reactions.dislikes}"
