@@ -14,6 +14,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.AppMobileVar4.Model.Todo
 import com.example.AppMobileVar4.ui.theme.AppMobileVar4Theme
 import com.example.appmobilevar4.ui.viewModel.PostViewModel
 import com.example.appmobilevar4.ui.viewModel.TodoViewModel
@@ -32,20 +33,14 @@ class MainActivity : ComponentActivity() {
 
                 val todoViewModel: TodoViewModel = viewModel()
 
+                val todo = Todo(
+                    todo = "Пропылесосить ковер",
+                    completed = false,
+                    userId = 31
+                )
+
                 LaunchedEffect(Unit) {
-                    todoViewModel.addTodo(
-                        todo = "Пропылесосить ковер",
-                        completed = false,
-                        userId = 31
-                    ) { todo ->
-                        Log.d(
-                            "TodoLog",
-                            "ID: ${todo.id} | " +
-                                    "Задание: ${todo.todo} | " +
-                                    "Отметка о завершении: ${todo.completed} | " +
-                                    "Пользователь: ${todo.userId}"
-                        )
-                    }
+                    todoViewModel.addTodo(todo)
                 }
 
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->

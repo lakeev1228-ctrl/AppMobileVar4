@@ -10,7 +10,7 @@ class PostViewModel: ViewModel() {
     fun fetchPosts() {
         viewModelScope.launch {
             try {
-                val response = RetrofitClient.apiService.getPosts()
+                val response = RetrofitClient.postApiService.getPosts()
 
                 for (post in response.posts) {
                     Log.d(
@@ -18,7 +18,8 @@ class PostViewModel: ViewModel() {
                         "ID: ${post.id} | " +
                                 "Заголовок: ${post.title} | " +
                                 "Текст: ${post.body} | " +
-                                "Реакции: ${post.reactions}"
+                                "Просмотры: ${post.views} | " +
+                                "Реакции: ${post.reactions.likes} / ${post.reactions.dislikes}"
                     )
                 }
             } catch (e: Exception) {

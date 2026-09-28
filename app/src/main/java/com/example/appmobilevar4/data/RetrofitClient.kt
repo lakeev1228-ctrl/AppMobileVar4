@@ -1,5 +1,7 @@
 package com.example.appmobilevar4.data
 
+import com.example.appmobilevar4.data.service.PostApiService
+import com.example.appmobilevar4.data.service.TodoApiService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -18,12 +20,20 @@ object RetrofitClient {
         .addInterceptor(loggingInterceptor)
         .proxy(proxy)
         .build()
-    val apiService: ApiService by lazy {
+
+    val RetrofitClient =
         Retrofit.Builder()
             .baseUrl("https://dummyjson.com/")
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-            .create(ApiService::class.java)
+
+    val postApiService: PostApiService by lazy {
+        RetrofitClient
+            .create(PostApiService::class.java)
+    }
+    val todoApiService: TodoApiService by lazy {
+        RetrofitClient
+            .create(TodoApiService::class.java)
     }
 }

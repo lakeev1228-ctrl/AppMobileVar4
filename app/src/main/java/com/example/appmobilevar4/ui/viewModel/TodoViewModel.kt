@@ -8,23 +8,18 @@ import com.example.appmobilevar4.data.RetrofitClient
 import kotlinx.coroutines.launch
 
 class TodoViewModel: ViewModel() {
-    fun addTodo(
-        todo: String,
-        completed: Boolean,
-        userId: Int,
-        onResult: (Todo) -> Unit
-    ) {
+    fun addTodo(todo: Todo) {
         viewModelScope.launch {
             try {
-                val newTodo = Todo(
-                    todo = todo,
-                    completed = completed,
-                    userId = userId
+                val response = RetrofitClient.todoApiService.createTodo(todo)
+
+                Log.d(
+                    "TodoLog",
+                    "ID: ${response.id} | " +
+                            "Задание: ${response.todo} | " +
+                            "Отметка о завершении: ${response.completed} | " +
+                            "Пользователь: ${response.userId}"
                 )
-
-                val response = RetrofitClient.apiService.createTodo(newTodo)
-
-                onResult(response)
 
             } catch (e: Exception) {
                 Log.e("RetrofitError", e.message.toString())
