@@ -4,13 +4,13 @@ plugins {
 }
 
 android {
-    namespace = "com.example.AppMobileVar4"
+    namespace = "com.example.appmobilevar4"
     compileSdk {
         version = release(37)
     }
 
     defaultConfig {
-        applicationId = "com.example.AppMobileVar4"
+        applicationId = "com.example.appmobilevar4"
         minSdk = 33
         targetSdk = 37
         versionCode = 1

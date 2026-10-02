@@ -1,4 +1,4 @@
-package com.example.AppMobileVar4.Model
+package com.example.appmobilevar4.data.model
 
 data class Todo(
     val id: Int? = null,

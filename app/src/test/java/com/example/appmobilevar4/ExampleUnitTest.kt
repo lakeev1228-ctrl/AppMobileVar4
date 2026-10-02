@@ -1,4 +1,4 @@
-package com.example.AppMobileVar4
+package com.example.appmobilevar4
 
 import org.junit.Test
 

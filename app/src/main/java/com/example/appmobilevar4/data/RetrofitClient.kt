@@ -1,11 +1,13 @@
 package com.example.appmobilevar4.data
 
 import com.example.appmobilevar4.data.service.PostApiService
+import com.example.appmobilevar4.data.service.ProductApiService
 import com.example.appmobilevar4.data.service.TodoApiService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.create
 import java.net.InetSocketAddress
 import java.net.Proxy
 
@@ -24,7 +26,7 @@ object RetrofitClient {
     val RetrofitClient =
         Retrofit.Builder()
             .baseUrl("https://dummyjson.com/")
-            .client(okHttpClient)
+//            .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
@@ -35,5 +37,9 @@ object RetrofitClient {
     val todoApiService: TodoApiService by lazy {
         RetrofitClient
             .create(TodoApiService::class.java)
+    }
+    val productApiService: ProductApiService by lazy {
+        RetrofitClient
+            .create(ProductApiService::class.java)
     }
 }

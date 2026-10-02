@@ -1,7 +1,6 @@
-package com.example.AppMobileVar4
+package com.example.appmobilevar4
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -14,9 +13,10 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.AppMobileVar4.Model.Todo
-import com.example.AppMobileVar4.ui.theme.AppMobileVar4Theme
+import com.example.appmobilevar4.data.model.Todo
+import com.example.appmobilevar4.ui.theme.AppMobileVar4Theme
 import com.example.appmobilevar4.ui.viewModel.PostViewModel
+import com.example.appmobilevar4.ui.viewModel.ProductViewModel
 import com.example.appmobilevar4.ui.viewModel.TodoViewModel
 
 class MainActivity : ComponentActivity() {
@@ -41,6 +41,13 @@ class MainActivity : ComponentActivity() {
 
                 LaunchedEffect(Unit) {
                     todoViewModel.addTodo(todo)
+                }
+
+                val productViewModel: ProductViewModel = viewModel()
+
+                LaunchedEffect(Unit) {
+                    productViewModel.updateProduct()
+                    productViewModel.deleteTodo()
                 }
 
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->

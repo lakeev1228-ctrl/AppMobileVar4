@@ -1,6 +1,6 @@
 package com.example.appmobilevar4.data.service
 
-import com.example.AppMobileVar4.Model.PostResponse
+import com.example.appmobilevar4.data.model.PostResponse
 import retrofit2.http.GET
 
 interface PostApiService {

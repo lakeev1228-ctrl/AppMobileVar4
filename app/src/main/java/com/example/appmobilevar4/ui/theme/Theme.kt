@@ -1,4 +1,4 @@
-package com.example.AppMobileVar4.ui.theme
+package com.example.appmobilevar4.ui.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
